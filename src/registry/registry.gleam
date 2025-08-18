@@ -45,8 +45,6 @@ pub fn register(
   let assert Ok(pid) = process.subject_owner(subj)
   let wrapped = variant(subj)
   let key = to_actor_variant_name(variant)
-  echo key
-
   process.send(registry.self, Register(key, wrapped, pid))
 }
 
